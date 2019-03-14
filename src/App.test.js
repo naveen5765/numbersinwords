@@ -11,7 +11,7 @@ describe("Number in Words Conversion", () => {
     app = shallow(<App />);
   });
 
-  describe("UI Validation", () => {
+  describe("UI Requirement", () => {
     it('show an input field to the user in order to enter the number', () => {
       expect(app.find('.input_numbers').length).toBe(1);
     });

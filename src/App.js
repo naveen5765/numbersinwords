@@ -3,13 +3,14 @@ import './App.css';
 
 class App extends Component {
   state= {
-    value: null
+    value: ''
   }
 
   changeValue = (event) => {
-    this.setState({
-      value: event.target.value
-    })
+    const re = /^[0-9\b]+$/;
+    if (event.target.value === '' || re.test(event.target.value)) {
+      this.setState({value: event.target.value})
+    }
   }
 
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
           <label>{"Number <-> Words"}</label>
         </header>
         <div>
-          <input type="number" className="input_numbers" value={this.state.value} onChange={this.changeValue}/>
+          <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
         </div>
       </div>
     );

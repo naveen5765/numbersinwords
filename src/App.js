@@ -8,7 +8,9 @@ class App extends Component {
         <header className="App-header">
           <label>{"Number <-> Words"}</label>
         </header>
-        
+        <div>
+          <input type="number" className="input_numbers" />
+        </div>
       </div>
     );
   }

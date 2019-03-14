@@ -12,13 +12,13 @@ describe("Number in Words Conversion", () => {
   });
 
   it('show an input field to the user in order to enter the number', () => {
-    debugger;
     expect(app.find('.input_numbers').length).toBe(1);
   });
 
-  // it('allow the user to enter only numbers', () => {
-    
-  //   expect()
-  // });
+  it('allow the user to enter only numbers', () => {
+    app.setState({ value: 'sample' });
+    debugger;
+    expect(app.find('.input_numbers').get(0).value).toBeUndefined();
+  });
 })
 

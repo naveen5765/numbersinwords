@@ -7,7 +7,7 @@ seven hundred and fourty five dollars (amount in words)
 The Project implements this requirment to converts numbers into words.
 Note: This is done following TDD.
 
-## TL;DR
+## Get Started
 
 To get started right away:
 

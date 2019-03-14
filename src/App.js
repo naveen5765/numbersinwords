@@ -14,9 +14,13 @@ class App extends Component {
     }
   }
 
-  isNumberAvailable = () =>{
+  isNumberAvailable = () => {
     const isNumberAvailable = _.isNumber(this.state.value) === true ? true : false;
     return isNumberAvailable;
+  }
+
+  convertNumberToWords = () => {
+    return;
   }
 
   render() {
@@ -27,7 +31,7 @@ class App extends Component {
         </header>
         <div>
           <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
-          <button className="btn_convert" disabled={!this.isNumberAvailable()}>Convert</button>
+          <button className="btn_convert" disabled={!this.isNumberAvailable()} onClick={this.convertNumberToWords}>Convert</button>
         </div>
       </div>
     );

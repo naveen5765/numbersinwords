@@ -17,7 +17,6 @@ describe("Number in Words Conversion", () => {
 
   it('not allow the user to enter non numeric characters', () => {
     app.find('.input_numbers').simulate('change', {target: {value: 'a'}});
-    debugger;
     expect(app.find('.input_numbers').props().value).toBe('');
   });
 
@@ -28,7 +27,12 @@ describe("Number in Words Conversion", () => {
 
   it('show a button to convert the numbers to words and disable it when the input is empty', () => {
     expect(app.find('.btn_convert').length).toBe(1);
-    expect(app.find('.btn_convert').is('[disabled]')).toBe(true);
+    expect(app.find('.btn_convert').props().disabled).toBe(true);
+  });
+
+  it('enable the button when the input is not empty', () => {
+    app.setState({ value: 123 });
+    expect(app.find('.btn_convert').props().disabled).toBe(false);
   });
 })
 

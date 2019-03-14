@@ -15,7 +15,8 @@ class App extends Component {
   }
 
   isNumberAvailable = () =>{
-    return !_.isEmpty(this.state.value) ? false : true;
+    const isNumberAvailable = _.isNumber(this.state.value) === true ? true : false;
+    return isNumberAvailable;
   }
 
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
         </header>
         <div>
           <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
-          <button className="btn_convert" disabled={this.isNumberAvailable()}>Convert</button>
+          <button className="btn_convert" disabled={!this.isNumberAvailable()}>Convert</button>
         </div>
       </div>
     );

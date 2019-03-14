@@ -15,10 +15,16 @@ describe("Number in Words Conversion", () => {
     expect(app.find('.input_numbers').length).toBe(1);
   });
 
-  it('allow the user to enter only numbers', () => {
+  it('not allow the user to enter non numeric characters', () => {
     app.setState({ value: 'sample' });
     debugger;
-    expect(app.find('.input_numbers').get(0).value).toBeUndefined();
+    expect(app.find('.input_numbers').props().value().toBeUndefined());
+  });
+
+  it('allow the user to enter numbers', () => {
+    app.setState({ value: 123 });
+    debugger;
+    expect(app.find('.input_numbers').props().value().toBe(123));
   });
 })
 

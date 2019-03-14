@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +14,10 @@ class App extends Component {
     }
   }
 
+  isNumberAvailable = () =>{
+    return !_.isEmpty(this.state.value) ? false : true;
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,6 +26,7 @@ class App extends Component {
         </header>
         <div>
           <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
+          <button className="btn_convert" disabled={this.isNumberAvailable()}>Convert</button>
         </div>
       </div>
     );

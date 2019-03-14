@@ -25,5 +25,10 @@ describe("Number in Words Conversion", () => {
     app.setState({ value: 123 });
     expect(app.find('.input_numbers').props().value).toBe(123);
   });
+
+  it('show a button to convert the numbers to words and disable it when the input is empty', () => {
+    expect(app.find('.btn_convert').length).toBe(1);
+    expect(app.find('.btn_convert').is('[disabled]')).toBe(true);
+  });
 })
 

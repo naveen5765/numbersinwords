@@ -59,6 +59,11 @@ describe("Number in Words Conversion", () => {
 
       expect(app.find('.number_in_words').text()).toBe("one");
     });
+
+    it('should return "two" when passing number 2', () => {
+      var result = app.instance().convertNumberToWords(2);
+      expect(result).toBe('two');
+    });
   })
 })
 

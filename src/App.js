@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   convertNumberToWords = (number) => {
-    return 'one';
+    return number === 2 ? 'two': 'one';
   }
 
   render() {

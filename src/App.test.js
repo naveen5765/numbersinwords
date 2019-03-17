@@ -49,7 +49,7 @@ describe("Number in Words Conversion", () => {
   
   describe("Function to convert the number", () => {
     it('should return "one" when passing number 1', () => {
-      var result = app.instance().convertNumberToWords(1);
+      const result = app.instance().convertNumberToWords(1);
       expect(result).toBe('one');
     });
 
@@ -61,8 +61,13 @@ describe("Number in Words Conversion", () => {
     });
 
     it('should return "two" when passing number 2', () => {
-      var result = app.instance().convertNumberToWords(2);
+      const result = app.instance().convertNumberToWords(2);
       expect(result).toBe('two');
+    });
+
+    it('should return "three" when passing number 3', () => {
+      const result = app.instance().convertNumberToWords(3);
+      expect(result).toBe('three');
     });
   })
 })

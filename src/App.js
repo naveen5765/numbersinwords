@@ -20,7 +20,8 @@ class App extends Component {
   }
 
   convertNumberToWords = (number) => {
-    return number === 2 ? 'two': 'one';
+    const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    return units[number];
   }
 
   render() {

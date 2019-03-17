@@ -48,7 +48,10 @@ describe("Number in Words Conversion", () => {
   })
   
   describe("Function to convert the number", () => {
-    
+    it('should return "one" when passing number 1', () => {
+      var result = app.instance().convertNumberToWords(1);
+      expect(result).toBe('one');
+    });
   })
 })
 

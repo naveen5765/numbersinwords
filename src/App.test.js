@@ -89,6 +89,11 @@ describe("Number in Words Conversion", () => {
       const result = app.instance().convertNumberToWords(100);
       expect(result).toBe('one hundred');
     });
+
+    it('should return "one hundred and eighty eight" when passing number 188', () => {
+      const result = app.instance().convertNumberToWords(188);
+      expect(result).toBe('one hundred and eighty eight');
+    });
   })
 })
 

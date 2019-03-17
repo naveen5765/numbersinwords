@@ -49,6 +49,21 @@ class App extends Component {
           }
         });
       }
+      if(numberSplitInString.length === 4){
+        numberSplitInString.forEach((element,index) => {
+          if(index === 0){
+            words+= units[numberSplitInString[0]] + " thousand ";
+          }else if(index === 1 && element !== '0'){
+            words+= units[numberSplitInString[0]] + " hundred ";
+          }else if(index === 2 && element === '1'){
+            words+= "and "+ units[numberSplitInString[1] + 11] + " ";
+          }else if(index === 2 && element !== '0'){
+            words+= "and "+ tens[numberSplitInString[1]] + " ";
+          }else if(index === 3 && element !== '0'){
+            words+= units[numberSplitInString[2]] + " ";
+          }
+        });
+      }
       return words.trim();
     }
   }

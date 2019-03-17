@@ -24,6 +24,8 @@ class App extends Component {
     const tens = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty'];
     if(number <= 19)
       return units[number];
+    else if(number === 10000)
+      return "ten thousand";
     else{
       let numberSplitInString = number.toString().split('');
       let words = '';

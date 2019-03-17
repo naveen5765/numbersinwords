@@ -109,6 +109,16 @@ describe("Number in Words Conversion", () => {
       const result = app.instance().convertNumberToWords(1564);
       expect(result).toBe('one thousand five hundred and sixty four');
     });
+
+    it('should return "seven thousand six hundred and thirty two" when passing number 7632', () => {
+      const result = app.instance().convertNumberToWords(7632);
+      expect(result).toBe('seven thousand six hundred and thirty two');
+    });
+
+    it('should return "ten thousand" when passing number 10000', () => {
+      const result = app.instance().convertNumberToWords(10000);
+      expect(result).toBe('ten thousand');
+    });
   })
 })
 

@@ -30,46 +30,64 @@ class App extends Component {
       return "ten thousand";
     else{
       let numberSplitInString = number.toString().split('');
-      let words = '';
-      if(numberSplitInString.length === 2){
-        numberSplitInString.forEach((element,index) => {
-          if(index === 0){
-            words+= tens[numberSplitInString[0]] + " ";
-          }else if(index === 1 && element !== '0'){
-            words+= units[numberSplitInString[1]] + " ";
-          }
-        });
-      }
-      if(numberSplitInString.length === 3){
-        numberSplitInString.forEach((element,index) => {
-          if(index === 0){
-            words+= units[numberSplitInString[0]] + " hundred ";
-          }else if(index === 1 && element === '1'){
-            words+= "and "+ units[numberSplitInString[1] + 11] + " ";
-          }else if(index === 1 && element !== '0'){
-            words+= "and "+ tens[numberSplitInString[1]] + " ";
-          }else if(index === 2 && element !== '0'){
-            words+= units[numberSplitInString[2]] + " ";
-          }
-        });
-      }
-      if(numberSplitInString.length === 4){
-        numberSplitInString.forEach((element,index) => {
-          if(index === 0){
-            words+= units[numberSplitInString[0]] + " thousand ";
-          }else if(index === 1 && element !== '0'){
-            words+= units[numberSplitInString[1]] + " hundred ";
-          }else if(index === 2 && element === '1'){
-            words+= "and "+ units[numberSplitInString[2] + 11] + " ";
-          }else if(index === 2 && element !== '0'){
-            words+= "and "+ tens[numberSplitInString[2]] + " ";
-          }else if(index === 3 && element !== '0'){
-            words+= units[numberSplitInString[3]] + " ";
-          }
-        });
+      let words;
+      switch(numberSplitInString.length){
+        case 2: words = this.convertNumber20To99(numberSplitInString, units, tens);
+        break;
+        case 3: words = this.convertNumber100To999(numberSplitInString, units, tens);
+        break;
+        case 4: words = this.convertNumber1000To9990(numberSplitInString, units, tens);
+        break;
+        default: break;
       }
       return words.trim();
     }
+  }
+
+  convertNumber20To99 = (numberSplitInString, units, tens) => {
+    let words = '';
+    numberSplitInString.forEach((element,index) => {
+      if(index === 0){
+        words+= tens[numberSplitInString[0]] + " ";
+      }else if(index === 1 && element !== '0'){
+        words+= units[numberSplitInString[1]] + " ";
+      }
+    });
+    return words;
+  }
+
+  convertNumber100To999 = (numberSplitInString, units, tens) => {
+    let words = '';
+    numberSplitInString.forEach((element,index) => {
+      if(index === 0){
+        words+= units[numberSplitInString[0]] + " hundred ";
+      }else if(index === 1 && element === '1'){
+        words+= "and "+ units[numberSplitInString[1] + 11] + " ";
+      }else if(index === 1 && element !== '0'){
+        words+= "and "+ tens[numberSplitInString[1]] + " ";
+      }else if(index === 2 && element !== '0'){
+        words+= units[numberSplitInString[2]] + " ";
+      }
+    });
+    return words;
+  }
+
+  convertNumber1000To9990 = (numberSplitInString, units, tens) => {
+    let words = '';
+    numberSplitInString.forEach((element,index) => {
+      if(index === 0){
+        words+= units[numberSplitInString[0]] + " thousand ";
+      }else if(index === 1 && element !== '0'){
+        words+= units[numberSplitInString[1]] + " hundred ";
+      }else if(index === 2 && element === '1'){
+        words+= "and "+ units[numberSplitInString[2] + 11] + " ";
+      }else if(index === 2 && element !== '0'){
+        words+= "and "+ tens[numberSplitInString[2]] + " ";
+      }else if(index === 3 && element !== '0'){
+        words+= units[numberSplitInString[3]] + " ";
+      }
+    });
+    return words;
   }
 
   render() {

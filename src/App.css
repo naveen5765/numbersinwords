@@ -4,11 +4,19 @@
 
 .App-header {
   background-color: #282c34;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.pad_20 {
+  padding: 20px;
+}
+
+.mar_10 {
+  margin: 10px;
 }

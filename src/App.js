@@ -94,11 +94,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <label>{"Number <-> Words"}</label>
+          <label>{"Number In Words"}</label>
         </header>
-        <div>
+        <div className="pad_20">
           <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
-          <button className="btn_convert" disabled={!this.isNumberAvailable()} 
+          <button className="btn_convert mar_10" disabled={!this.isNumberAvailable()} 
             onClick={
               () => {
                 this.setState({

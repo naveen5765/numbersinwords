@@ -54,13 +54,13 @@ class App extends Component {
           if(index === 0){
             words+= units[numberSplitInString[0]] + " thousand ";
           }else if(index === 1 && element !== '0'){
-            words+= units[numberSplitInString[0]] + " hundred ";
+            words+= units[numberSplitInString[1]] + " hundred ";
           }else if(index === 2 && element === '1'){
-            words+= "and "+ units[numberSplitInString[1] + 11] + " ";
+            words+= "and "+ units[numberSplitInString[2] + 11] + " ";
           }else if(index === 2 && element !== '0'){
-            words+= "and "+ tens[numberSplitInString[1]] + " ";
+            words+= "and "+ tens[numberSplitInString[2]] + " ";
           }else if(index === 3 && element !== '0'){
-            words+= units[numberSplitInString[2]] + " ";
+            words+= units[numberSplitInString[3]] + " ";
           }
         });
       }

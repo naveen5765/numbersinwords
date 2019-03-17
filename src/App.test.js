@@ -52,6 +52,13 @@ describe("Number in Words Conversion", () => {
       var result = app.instance().convertNumberToWords(1);
       expect(result).toBe('one');
     });
+
+    it('should display the result of the function on the screen and clear the input', () => {
+      app.setState({ value: 1 });
+      app.find('.btn_convert').simulate('click');
+
+      expect(app.find('.number_in_words').text()).toBe("one");
+    });
   })
 })
 

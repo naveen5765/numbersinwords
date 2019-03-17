@@ -3,7 +3,8 @@ import './App.css';
 
 class App extends Component {
   state= {
-    value: ''
+    value: '',
+    result: ''
   }
 
   changeValue = (event) => {
@@ -33,10 +34,15 @@ class App extends Component {
           <button className="btn_convert" disabled={!this.isNumberAvailable()} 
             onClick={
               () => {
-                this.convertNumberToWords(this.state.value)
+                this.setState({
+                  result: this.convertNumberToWords(this.state.value)
+                })
               }
             }
             >Convert</button>
+        </div>
+        <div>
+          <span className="number_in_words">{this.state.result}</span>
         </div>
       </div>
     );

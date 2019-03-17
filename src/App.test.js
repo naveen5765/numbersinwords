@@ -94,6 +94,11 @@ describe("Number in Words Conversion", () => {
       const result = app.instance().convertNumberToWords(188);
       expect(result).toBe('one hundred and eighty eight');
     });
+
+    it('should return "seven hundred and fourty five" when passing number 745', () => {
+      const result = app.instance().convertNumberToWords(745);
+      expect(result).toBe('seven hundred and fourty five');
+    });
   })
 })
 

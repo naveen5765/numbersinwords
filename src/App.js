@@ -45,7 +45,7 @@ class App extends Component {
           }else if(index === 1 && element !== '0'){
             words+= "and "+ tens[numberSplitInString[1]] + " ";
           }else if(index === 2 && element !== '0'){
-            words+= units[numberSplitInString[1]] + " ";
+            words+= units[numberSplitInString[2]] + " ";
           }
         });
       }

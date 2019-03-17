@@ -74,6 +74,11 @@ describe("Number in Words Conversion", () => {
       const result = app.instance().convertNumberToWords(10);
       expect(result).toBe('ten');
     });
+
+    it('should return "twenty" when passing number 20', () => {
+      const result = app.instance().convertNumberToWords(20);
+      expect(result).toBe('twenty');
+    });
   })
 })
 

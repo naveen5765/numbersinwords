@@ -21,8 +21,23 @@ class App extends Component {
 
   convertNumberToWords = (number) => {
     const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'] ;
-    // const tens = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty'];
-    return units[number];
+    const tens = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty'];
+    if(number <= 19)
+      return units[number];
+    else{
+      let numberSplitInString = number.toString().split('');
+      let words = '';
+      if(numberSplitInString.length === 2){
+        numberSplitInString.forEach((element,index) => {
+          if(index === 0){
+            words+= tens[numberSplitInString[0]] + " ";
+          }else if(index === 1 && element !== '0'){
+            words+= units[numberSplitInString[1]] + " ";
+          }
+        });
+      }
+      return words.trim();
+    }
   }
 
   render() {

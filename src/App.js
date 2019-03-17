@@ -26,7 +26,7 @@ class App extends Component {
       return "Number exceeded the limit";
     else if(number <= 19)
       return units[number];
-    else if(number === 10000)
+    else if(parseInt(number,10) === 10000)
       return "ten thousand";
     else{
       let numberSplitInString = number.toString().split('');

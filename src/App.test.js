@@ -124,6 +124,11 @@ describe("Number in Words Conversion", () => {
       const result = app.instance().convertNumberToWords(18290);
       expect(result).toBe('Number exceeded the limit');
     });
+
+    it('should return "ten thousand" when passing string 10000', () => {
+      const result = app.instance().convertNumberToWords('10000');
+      expect(result).toBe('ten thousand');
+    });
   })
 })
 

@@ -7,6 +7,8 @@ seven hundred and fourty five dollars (amount in words)
 The Project implements this requirment to converts numbers into words.
 Note: This is done following TDD.
 
+Note: The max limit for conversion is 10000.
+
 ## Get Started
 
 To get started right away:

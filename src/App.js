@@ -97,8 +97,8 @@ class App extends Component {
           <label>{"Number In Words"}</label>
         </header>
         <div className="pad_20">
-          <input className="input_numbers" value={this.state.value} onChange={this.changeValue} />
-          <button className="btn_convert mar_10" disabled={!this.isNumberAvailable()} 
+          <input id="input_numbers" value={this.state.value} onChange={this.changeValue} />
+          <button id="btn_convert" className="mar_10" disabled={!this.isNumberAvailable()} 
             onClick={
               () => {
                 this.setState({
@@ -109,7 +109,7 @@ class App extends Component {
             >Convert</button>
         </div>
         <div>
-          <span className="number_in_words">{this.state.result}</span>
+          <span id="number_in_words">{this.state.result}</span>
         </div>
       </div>
     );

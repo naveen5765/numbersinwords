@@ -15,8 +15,7 @@ class App extends Component {
   }
 
   isNumberAvailable = () => {
-    const isNumberAvailable = (this.state.value === '') ? false : true;
-    return isNumberAvailable;
+    return ((this.state.value === '') ? false : true); 
   }
 
   convertNumberToWords = (number) => {
